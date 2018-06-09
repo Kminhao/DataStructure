@@ -15,13 +15,19 @@ public class Arvore {
         insereIterativo(6);
         insereIterativo(10);
         insereIterativo(11);
-        insereIterativo(3); 
+        insereIterativo(3);
         insereIterativo(4);
         insereIterativo(5);
-         
-        //  exibe(raiz);
-        System.out.println("Número de folhas: " + contarFolhas(raiz));
-        System.out.println("Profundidade: " + profundidade(raiz));
+
+        exibeOrdenado(raiz);
+     //   System.out.println("Número de folhas: " + contarFolhas(raiz));
+     //   System.out.println("Profundidade: " + profundidade(raiz));
+     System.out.println("lul");
+     //   exibeInverso(raiz);
+
+        exibe1filho(raiz);
+        System.out.println("lul");
+        exibefolhas(raiz);
     }
 
     public static void insereIterativo(int v) {
@@ -54,14 +60,55 @@ public class Arvore {
         }
     }
 
-    public static void exibe(No temp) {
+    public void inserir(int x) {
+
+    }
+
+    public static void exibeOrdenado(No temp) {
         if (temp != null) {
             System.out.println(temp.valor);
-            exibe(temp.esq);
-            exibe(temp.dir);
+            exibeOrdenado(temp.esq);
+            exibeOrdenado(temp.dir);
         }
     }
 
+    public static void exibeInverso(No temp) {
+        if (temp != null) {
+            exibeInverso(temp.dir);
+            exibeInverso(temp.esq);
+            System.out.println(temp.valor);
+        }
+
+    }
+
+    public static void exibe1filho(No temp) {
+        if (temp != null) {
+            exibe1filho(temp.dir);
+            exibe1filho(temp.esq);
+        if ((temp.esq == null && temp.dir != null)||(temp.esq != null && temp.dir == null)) {
+                    System.out.println(temp.valor);
+
+       }
+
+    }
+}
+    
+    
+    public static void exibefolhas(No temp){
+        if(temp != null){
+            exibefolhas(temp.dir);
+            exibefolhas(temp.esq);
+          if (temp.esq == null && temp.dir == null){
+              System.out.println(temp.valor);
+          }
+        
+    }
+    
+    }    
+    
+    
+    
+    
     public static int contarFolhas(No temp) {
         if (temp == null) {
             return 0;

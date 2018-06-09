@@ -9,14 +9,13 @@ public class PrinterArvoreBinária{
     static No raiz;
     public static void main(String[] args) {
 
-        insere(8);
-        insere(4);
-        insere(12);
-        insere(2);
+
+        insere(9);
         insere(6);
         insere(10);
-        insere(14);
-        insere(1);
+        insere(11);
+        insere(3); 
+        insere(4);
         insere(5);
         
         BTreePrinter.PrintArvore(raiz);
